@@ -6,10 +6,12 @@
   },
   "test3": {
     "searchData3": "Giza Systems Headway Program",
-    "expectedFirstResult3": "HEADWAY Graduate Program Intern - Cairo, Egypt"
+    "expectedFirstResult33": "HEADWAY Graduate Program Intern - Cairo, Egypt",
+    "expectedFirstResult3": "Headway Intern 2023 - Software Development Center"
   },
   "test4": {
     "searchData4": "test",
-    "expectedFirstResult4": "Fast.com: Internet Speed Test"
+    "expectedFirstResult44": "Fast.com: Internet Speed Test",
+    "expectedFirstResult4": "Test Definition & Meaning - Merriam-Webster"
   }
 }
