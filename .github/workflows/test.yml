@@ -2,6 +2,10 @@ name: test yml
 
 on:
   workflow_dispatch:
+    inputs:
+      testsPath:
+        description: 'Path to Tests to be Executed'
+        default: ''
 
 jobs:
   Demo_chrome_Test:
@@ -24,7 +28,7 @@ jobs:
 
       - name: run tests
         continue-on-error: true
-        run: mvn test -DbrowserType="chrome" -DheadlessExecution="true" -Dtest="google.tests.SeleniumTestNgDemoPOM"
+        run: mvn test -DbrowserType="chrome" -DheadlessExecution="true" -Dtest="${{ github.event.inputs.testsPath }}"
       - name: Publish Report
         uses: dorny/test-reporter@v1
         if: success() || failure()    # run this step even if previous step failed
@@ -54,7 +58,7 @@ jobs:
 
       - name: run tests
         continue-on-error: true
-        run: mvn test -DbrowserType="firefox" -DheadlessExecution="true" -Dtest="google.tests.SeleniumTestNgDemoPOM"
+        run: mvn test -DbrowserType="firefox" -DheadlessExecution="true" -Dtest="${{ github.event.inputs.testsPath }}"
       
       - name: Publish Report
         uses: dorny/test-reporter@v1
